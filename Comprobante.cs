@@ -27,12 +27,12 @@ namespace GeneradorDeReportesdeFacturas
                 return _attributes["Certificado"];
             }
         }
-        public string Fecha
+        public DateTime Fecha
         {
             get
             {
                 var fecha = _attributes["Fecha"];
-                return fecha.Substring(0, fecha.IndexOf('T'));
+                return StringToDateTime(fecha.Substring(0, fecha.IndexOf('T')));
             }
         }
         public string Folio

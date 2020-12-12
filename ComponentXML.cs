@@ -11,6 +11,7 @@ namespace GeneradorDeReportesdeFacturas
     {
         protected Dictionary<string, string> _attributes;
         protected List<XmlNode> _childNodes;
+
         public bool HasChildren { get; private set; }
         public ComponentXML()
         {
@@ -33,6 +34,16 @@ namespace GeneradorDeReportesdeFacturas
                 {
                     _childNodes.Add(child);
                 }
+        }
+
+        protected DateTime StringToDateTime(string date)
+        {
+            var firstIndex = date.IndexOf('-');
+            var lastIndex= date.LastIndexOf('-');
+            var year = Int32.Parse(date.Substring(0, firstIndex));
+            var month = Int32.Parse(date.Substring(firstIndex + 1, lastIndex - (firstIndex + 1)));
+            var day = Int32.Parse(date.Substring(lastIndex + 1));
+            return new DateTime(year, month, day);
         }
 
     }

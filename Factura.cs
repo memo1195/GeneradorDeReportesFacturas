@@ -66,7 +66,7 @@ namespace GeneradorDeReportesdeFacturas
                 return "cfdi:";
             }
         }
-        private Comprobante comprobante;
+        public Comprobante Comprobante { get; private set; }
         
         public Factura(string direccion)
         {
@@ -77,7 +77,7 @@ namespace GeneradorDeReportesdeFacturas
         {
             var doc = new XmlDocument();
             doc.Load(direccion);
-            comprobante = new Comprobante(doc.LastChild);
+            Comprobante = new Comprobante(doc.LastChild);
         }
     }
 }

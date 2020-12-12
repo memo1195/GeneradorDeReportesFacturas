@@ -36,8 +36,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\..\..\Documents\ClosedXML\ClosedXML\ClosedXML\bin\Debug\net40\ClosedXML.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +58,7 @@
     <Compile Include="Comprobante.cs" />
     <Compile Include="Concepto.cs" />
     <Compile Include="Conceptos.cs" />
+    <Compile Include="ExcelGen.cs" />
     <Compile Include="Impuestos.cs" />
     <Compile Include="Receptor.cs" />
     <Compile Include="Emisor.cs" />
